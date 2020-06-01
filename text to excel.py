@@ -1,4 +1,4 @@
-
+import xlsxwriter
 
 # a_file = open("C:/Users/admin/Desktop/check.txt", "r")
 # list_of_lists = []
@@ -37,3 +37,10 @@ def reemovNestings(list_of_lists): #replce l by list of list
 print ('The original list: ', list_of_lists) 
 reemovNestings(list_of_lists) 
 print ('The list after removing nesting: ', output) 
+print(list_of_lists[0])
+
+workbook = xlsxwriter.Workbook("C:/Users/admin/Desktop/check.xlsx")
+worksheet = workbook.add_worksheet()
+
+worksheet.write_row(0, 0, list_of_lists[0]) #row,column
+workbook.close()
